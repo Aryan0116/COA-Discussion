@@ -363,7 +363,7 @@ if (process.env.NODE_ENV === 'production') {
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
 
-    res.sendFile(path.resolve(__dirname, '../../build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '../../', 'index.html'));
   });
 }
 
