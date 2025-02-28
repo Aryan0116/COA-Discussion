@@ -3,7 +3,6 @@ dotenv.config();
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import path from 'path';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import multer from 'multer';
