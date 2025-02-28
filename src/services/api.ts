@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const API_URL = process.env.NODE_ENV === 'production' 
   ? '/api' 
-  : 'http://localhost:5000/api';
+  : 'https://coa-discussion.onrender.com/api';
 
 // Create axios instance
 const api = axios.create({
