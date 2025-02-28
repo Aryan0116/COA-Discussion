@@ -8,6 +8,8 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import multer from 'multer';
 import { v2 as cloudinary } from 'cloudinary';
+import * as path from 'path';
+import { fileURLToPath } from 'url';
 import { CloudinaryStorage } from 'multer-storage-cloudinary';
 import User from './models/User.js';
 import Post from './models/Post.js';
@@ -357,8 +359,11 @@ app.delete('/api/comments/:id', authenticateToken, async (req, res) => {
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
   app.use(express.static('build'));
-  
+
   app.get('*', (req, res) => {
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+
     res.sendFile(path.resolve(__dirname, '../../build', 'index.html'));
   });
 }
